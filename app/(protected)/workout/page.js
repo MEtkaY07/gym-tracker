@@ -17,6 +17,7 @@ export default function WorkoutSelectPage() {
     return (
         <div className={styles.container}>
             <header className={styles.header}>
+                <button className={styles.btnGhost} onClick={() => router.push('/')}>Home</button>
                 <h2>Select a Template</h2>
                 <p>Choose a workout template to begin</p>
             </header>

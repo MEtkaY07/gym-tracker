@@ -104,6 +104,24 @@
   transform: translateY(0);
 }
 
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  color: var(--text-secondary);
+}
+
+.btnGhost:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
+}
+
 .exerciseList {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);

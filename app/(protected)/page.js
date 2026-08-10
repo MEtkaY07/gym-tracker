@@ -17,6 +17,10 @@ export default function Home() {
     supabase.auth.signOut();
     router.push('/login')
   }
+  
+  function createTemplate(){
+    router.push('/templates')
+  }
 
   return (
     <div className={styles.container}>
@@ -24,6 +28,7 @@ export default function Home() {
         <h1>Gym Tracker</h1>
         <div className={styles.headerActions}>
           <button className={styles.btnPrimary} onClick={startWorkout}>Start Workout</button>
+          <button className={styles.btnGhost} onClick={createTemplate}>Create Templates</button>
           <button className={styles.btnGhost} onClick={signOut}>Sign out</button>
         </div>
       </header>

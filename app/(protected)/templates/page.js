@@ -3,6 +3,7 @@
 import { supabase } from '@/lib/supabase'
 import { useState, useEffect } from 'react';
 import { useUserId } from '@/lib/hooks/useUserId';
+import { useRouter } from 'next/navigation'
 import styles from './page.module.css';
 
 export default function TemplatesPage() {
@@ -10,6 +11,7 @@ export default function TemplatesPage() {
     const [exerciseInput, setExerciseInput] = useState('')
     const [exercises, setExercises] = useState([]);
     const {userId} = useUserId();
+    const router = useRouter();
 
     function addExercise(){
       setExercises([...exercises, exerciseInput])
@@ -43,6 +45,7 @@ export default function TemplatesPage() {
     <div className={styles.container}>
       <header className={styles.header}>
         <h1>Gym Tracker</h1>
+        <button className={styles.btnGhost} onClick={() => router.push('/')}>Home</button>
       </header>
 
       <form onSubmit={handleSubmit} className={styles.form}>
@@ -62,7 +65,7 @@ export default function TemplatesPage() {
           />
           <button type='button' className={styles.btnAddExercise} onClick={addExercise}>Add Exercise</button>
         </div>
-        <button type='submit' className={styles.btnSubmit}>Log Workout</button>
+        <button type='submit' className={styles.btnSubmit}>Create Template</button>
       </form>
 
       {exercises.length > 0 && (

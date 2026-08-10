@@ -76,6 +76,24 @@
   margin-bottom: 1.5rem;
 }
 
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  color: var(--text-secondary);
+}
+
+.btnGhost:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
+}
+
 @media (max-width: 640px) {
   .container {
     padding: 1.5rem 1rem;

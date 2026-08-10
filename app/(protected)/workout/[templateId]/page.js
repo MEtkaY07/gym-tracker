@@ -79,6 +79,7 @@ export default function WorkoutPage() {
 
   return (
     <div className={styles.container}>
+      <button className={styles.btnGhost} onClick={() => router.push('/')}>Home</button>
       <header className={styles.header}>
         <h1>{template.name}</h1>
       </header>
