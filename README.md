@@ -1,8 +1,9 @@
 # Gym Tracker
 
 A full-stack app for creating workout templates, logging sets, reps, and weights, and reviewing workout history.
-## Live Demo:
-https://gym-tracker-livid-nine.vercel.app/login
+
+
+[Live Demo](https://gym-tracker-livid-nine.vercel.app/login) 
 
 ## Features
 - User authentication and authorization
