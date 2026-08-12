@@ -46,7 +46,7 @@ A full-stack app for creating workout templates, logging sets, reps, and weights
 | `user_id` | uuid | Owner (references `auth.users`) |
 
 
-## Pictures
+## Screenshots
 ![LoginPage](pictures/login.png)
 ![HomePage](pictures/home.png)
 ![SelectTemplatePage](pictures/templates.png)
