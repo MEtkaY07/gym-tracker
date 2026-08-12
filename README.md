@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gym Tracker
 
-## Getting Started
+A full-stack app for creating workout templates, logging sets, reps, and weights, and reviewing workout history.
+## Live Demo:
+https://gym-tracker-livid-nine.vercel.app/login
 
-First, run the development server:
+## Features
+- User authentication and authorization
+- Create, read, update, and delete workouts
+- Workout logging with sets, reps, and weights
+- Workout history
+- Supabase Row Level Security (RLS)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies Used
+- Next.js
+- React
+- Javascript
+- Supabase
+- PostgreSQL
+- Vercel
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Database Schema
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+**`templates`** — user-created workout plans
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Column | Type | Description |
+|---|---|---|
+| `id` | int8 | Primary key |
+| `name` | text | Template name (e.g. "Chest Day") |
+| `exercises` | text[] | List of exercise names |
+| `user_id` | uuid | Owner (references `auth.users`) |
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+**`workouts`** — logged sets from completed workouts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Column | Type | Description |
+|---|---|---|
+| `id` | int8 | Primary key |
+| `template_id` | int8 | References `templates.id` |
+| `exercise` | text | Exercise name |
+| `reps` | int4 | Reps performed |
+| `weight` | float8 | Weight used |
+| `workout_session_id` | int8 | Groups rows from the same session |
+| `user_id` | uuid | Owner (references `auth.users`) |
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Pictures
+![LoginPage](pictures/login.png)
+![HomePage](pictures/home.png)
+![SelectTemplatePage](pictures/templates.png)
+![WorkoutPage](pictures/workout.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Future Improvements
+- Workout progress and volume analytics
+- Personal record tracking
+- Exercise progress charts
+- Improved mobile experience
+- AI-powered workout recommendations
